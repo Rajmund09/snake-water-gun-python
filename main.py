@@ -1,4 +1,5 @@
 import random
+
 computer = random.choice([-1 , 1, 0])
 youstr = input("enter your choice: ")
 youDict = {"s": 1, "w": -1, "g": 0}
