@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun | Premium Edition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Snake Water Gun</h1>
+            <p class="subtitle">Choose your element. Outsmart the computer.</p>
+        </header>
+
+        <section class="game-area">
+            <div class="choices">
+                <button class="choice-card" id="snake" onclick="makeChoice('snake')">
+                    <div class="icon">🐍</div>
+                    <span>Snake</span>
+                </button>
+                <button class="choice-card" id="water" onclick="makeChoice('water')">
+                    <div class="icon">💧</div>
+                    <span>Water</span>
+                </button>
+                <button class="choice-card" id="gun" onclick="makeChoice('gun')">
+                    <div class="icon">🔫</div>
+                    <span>Gun</span>
+                </button>
+            </div>
+
+            <div id="result-display" class="result-display hidden">
+                <div class="result-content">
+                    <div class="result-details">
+                        <div class="player-pick">
+                            <span class="label">You Picked</span>
+                            <span id="user-pick-text" class="value">Snake</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="computer-pick">
+                            <span class="label">Computer Picked</span>
+                            <span id="computer-pick-text" class="value">Water</span>
+                        </div>
+                    </div>
+                    <h2 id="result-text">You Win!</h2>
+                    <button class="btn-primary" onclick="resetGame()">Play Again</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Premium Snake Water Gun. Crafted with Elegance.</p>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
